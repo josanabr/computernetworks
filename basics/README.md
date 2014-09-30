@@ -45,11 +45,11 @@ Open a terminal and type ``python``.
 A python shell should run ``>>>``. 
 If you see the python shell then type the following commands
 
-- ``socket.gethostname()``, returns the host name of the machine where this command was executed
+- ``socket.gethostname()``, returns the host name of the machine where this command is executed
 - ``socket.gethostbyname('www.google.com')``, returns the IP of ``www.google.com``. What service was used to get that IP?
 
 ## Converting IP numbers to different formats
-This program converts an IP address from string format to hex representation and backwards.
+This program converts an IP address from string format to its hex representation and backwards.
 
 ```
 import socket
@@ -67,6 +67,9 @@ convert_ip4_address()
 ## Printing the current time from the Internet time server
 
 This program queries to a remote server for the local time (via NTP protocol) and prints the answer.
+
+**NOTE** You probably must install the ``ntplib`` for Python.
+In a terminal, run ``sudo pip install ntplib``.
 
 ```
 import ntplib

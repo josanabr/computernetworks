@@ -1,28 +1,33 @@
 # Basics directory
-This directory contains various programs presented in these books
+This directory contains various programs which were extracted from these books
 
 - Computer Networks a Top-down approach
 - Python Network Programming Cookbook
 
+As follows is presented the following topics
+
+- A UDP Client/Server program
+- A TCP Client/Server program
+
 ## A simple UDP client-server program
 
-Client ``UDPClient.py``
+Client: ``UDPClient.py``
 
-Server ``UDPServer.py``
+Server: ``UDPServer.py``
 
 To run these programs open two terminals. In one terminal run ``python UDPServer.py``.
 Go to the other terminal and run ``python UDPClient.py`` then follow the instructions.
 
 ## A simple TCP client-server program
 
-Client ``TCPClient.py``
+Client: ``TCPClient.py``
 
-Server ``TCPServer.py``
+Server: ``TCPServer.py``
 
 To run these programs open two terminals. In one terminal run ``python TCPServer.py``.
 Go to the other terminal and run ``python TCPClient.py`` then follow the instructions.
 
-## Questions about UDP\* and TCP\*?
+## Questions about UDP\* and TCP\* programs?
 
 - What happen if the UDPClient.py is run before UDPServer.py?
 - What happen if you run the UDPClient.py program, type a sentence and hit ``ENTER``
@@ -37,12 +42,14 @@ Go to the other terminal and run ``python TCPClient.py`` then follow the instruc
 ## Another useful methods provided by socket
 
 Open a terminal and type ``python``. 
-Type the following commands
+A python shell should run ``>>>``. 
+If you see the python shell then type the following commands
 
 - ``socket.gethostname()``, returns the host name of the machine where this command was executed
 - ``socket.gethostbyname('www.google.com')``, returns the IP of ``www.google.com``. What service was used to get that IP?
 
 ## Converting IP numbers to different formats
+This program converts an IP address from string format to hex representation and backwards.
 
 ```
 import socket
@@ -59,6 +66,8 @@ convert_ip4_address()
 
 ## Printing the current time from the Internet time server
 
+This program queries to a remote server for the local time (via NTP protocol) and prints the answer.
+
 ```
 import ntplib
 from time import ctime
@@ -72,6 +81,9 @@ print_time()
 ```
 
 ## Finding a service name, given the port and protocol
+
+This program shows how to know the name of a service given its port and protocol.
+
 ```
 import socket
 

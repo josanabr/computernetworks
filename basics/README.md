@@ -8,6 +8,7 @@ As follows is presented the following topics
 
 - A UDP Client/Server program
 - A TCP Client/Server program
+- Another snippets of code
 
 ## A simple UDP client-server program
 
@@ -39,62 +40,36 @@ Go to the other terminal and run ``python TCPClient.py`` then follow the instruc
 - Can you run TCPServer.py and UDPServer.py simultaneously?
 - Do you remember this sentence ``serverSocket.bind(('',serverPort))``? What is the meaning of ``''``? 
 
-## Another useful methods provided by socket
+## Another programs exhibiting the use of `socket` class
 
-Open a terminal and type ``python``. 
-A python shell should run ``>>>``. 
-If you see the python shell then type the following commands
+The following programs show how to use the `socket` class in different scenarios. The following files are available:
 
-- ``socket.gethostname()``, returns the host name of the machine where this command is executed
-- ``socket.gethostbyname('www.google.com')``, returns the IP of ``www.google.com``. What service was used to obtain that IP?
+- **basics-01.py** This program shows the basic use of the `socket` class in particular how to get the hostname of a server where this code is run
+- **basics-02.py** This program shows how to get the IP of a server given its IP
+- **basics-03.py** This program shows how to get the name of a network service given its protocol name and port number
+- **basics-04.py** This program runs as an NTP client using the `ntplib` library. It is possible to the ntplib should be installed in your system, here is the command ``sudo pip install ntplib``
+- **basics-05.py** This program runs as an NTP client with no third libraries. It is interesting because it shows how a real UDP protocol works
 
-## Converting IP numbers to different formats
-This program converts an IP address from string format to its hex representation and backwards.
-
-```
-import socket
-from binascii import hexlify
-
-def convert_ip4_address():
-	for ip_addr in ['127.0.0.1', '192.168.0.1']:
-		packed_ip_addr = socket.inet_aton(ip_addr)
-		unpacked_ip_addr = socket.inet_ntoa(packed_ip_addr)
-		print "IP Address: %s => Packed: %s, Unpacked: %s"%(ip_addr, hexlify(packed_ip_addr), unpacked_ip_addr)
-
-convert_ip4_address()
-```
-
-## Printing the current time from the Internet time server
-
-This program queries to a remote server for the local time (via NTP protocol) and prints the answer.
-
-**NOTE** You probably must install the ``ntplib`` for Python before to run this code.
-Open a terminal and run ``sudo pip install ntplib``.
-
-```
-import ntplib
-from time import ctime
-
-def print_time():
-	ntp_client = ntplib.NTPClient()
-	response = ntp_client.request('pool.ntp.org')
-	print ctime(response.tx_time)
-
-print_time()
-```
-
-## Finding a service name, given the port and protocol
-
-This program shows how to know the name of a service given its port and protocol.
-
-```
-import socket
-
-def find_service_name():
-	protocolname = 'tcp'
-	for port in [80, 25]:
-		print "Port %s => service name %s"%(port, socket.getservbyport(port, protocolname))
-	print "Port %s => service name %s"%(53, socket.getservbyport(53, 'udp'))
-
-find_service_name()
-```
+[//]: <> (## Another useful methods provided by socket)
+[//]: <> ( )
+[//]: <> (Open a terminal and type ``python``. )
+[//]: <> (A python shell should run ``>>>``. )
+[//]: <> (If you see the python shell then type the following commands)
+[//]: <> ( )
+[//]: <> (- ``socket.gethostname()``, returns the host name of the machine where this command is executed)
+[//]: <> (- ``socket.gethostbyname('www.google.com')``, returns the IP of ``www.google.com``. What service was used to obtain that IP?)
+[//]: <> ( )
+[//]: <> (## Converting IP numbers to different formats))
+[//]: <> (This program converts an IP address from string format to its hex representation and backwards.))
+[//]: <> (```)
+[//]: <> (import socket)
+[//]: <> (from binascii import hexlify)
+[//]: <> ( )
+[//]: <> (def convert_ip4_address():)
+[//]: <> (	for ip_addr in ['127.0.0.1', '192.168.0.1']:)
+[//]: <> (		packed_ip_addr = socket.inet_aton(ip_addr))
+[//]: <> (		unpacked_ip_addr = socket.inet_ntoa(packed_ip_addr))
+[//]: <> (		print "IP Address: %s => Packed: %s, Unpacked: %s"%(ip_addr, hexlify(packed_ip_addr), unpacked_ip_addr))
+[//]: <> ( )
+[//]: <> (convert_ip4_address())
+[//]: <> (```)

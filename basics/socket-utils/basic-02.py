@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #
-# This program returns an IP given a hostname 
+# Este programa muestra como a traves de la clase socket se puede obtener el
+# IP de una maquina dado su nombre
 #
 import socket
 

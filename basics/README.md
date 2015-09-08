@@ -8,7 +8,11 @@ As follows is presented the following topics
 
 - A UDP Client/Server program
 - A TCP Client/Server program
-- Another snippets of code
+- Socket utils
+- NTP client
+- Socket HTTP client
+- Socket server
+- Echo service
 
 ## A simple UDP client-server program
 
@@ -40,13 +44,40 @@ Go to the other terminal and run ``python TCPClient.py`` then follow the instruc
 - Can you run TCPServer.py and UDPServer.py simultaneously?
 - Do you remember this sentence ``serverSocket.bind(('',serverPort))``? What is the meaning of ``''``? 
 
-## Another programs exhibiting the use of `socket` class
+## Socket utils
 
-The following programs show how to use the `socket` class in different scenarios. The following files are available:
+The following programs are located at *socket-utils* directory. There you can find some programas to show how to use the `socket` class in different scenarios. The following files are available:
 
 - **basics-01.py** This program shows the basic use of the `socket` class in particular how to get the hostname of a server where this code is run
 - **basics-02.py** This program shows how to get the IP of a server given its IP
 - **basics-03.py** This program shows how to get the name of a network service given its protocol name and port number
+
+## NTP Client
+The following programs are located at *ntp-client* directory. There you can find some programas to show how to use the `socket` class in different scenarios. The following files are available:
+
 - **basics-04.py** This program runs as an NTP client using the `ntplib` library. It is possible to the ntplib should be installed in your system, here is the command ``sudo pip install ntplib``
 - **basics-05.py** This program runs as an NTP client with no third libraries. It is interesting because it shows how a real UDP protocol works
 
+## HTTP Client
+In *socket-http-client* directory you will find five python programs (from python-01.py to python-05.py) to show how you can interact with a real HTTP server like www.google.com.
+- **socket-01.py** shows how to create an Internet TCP socket 
+- **socket-02.py** needs some help from you. Read the code and complete it
+- **socket-03.py** this time the `socket.connect` is used to connect with the www.google.com server
+- **socket-04.py** this time the program shows how you can send a HTTP request to the HTTP server
+- **socket-05.py** shows how to receive the responde from a HTTP server
+
+It is pretty important that you understand how the different functions allow to interact with a remote server
+
+## Socket server
+The previous codes shown how to interact from a client perspective. This time you will learn how to create a server. You can interact with this server using the
+`telnet` command. 
+All the programs are in the `socket-server` directory and you can access the server running the command `telnet localhost 8888`.
+
+- **server-01.py** shows the `socket.bind()` which is a method to bind a socket with a given host and port.
+- **server-02.py** this time the `socket.listen()` and `socket.accept()` are exposed. 
+- **server-03.py** this code shows how a server receives a connection then how it replies to the client
+- **server-04.py** this time an infinite loop is created in order to run the server forever.
+- **server-05.py** this time you need to complete the code in order to create a multithreaded server which accepts connections from several clients and it is able to attend them simultaneously.
+
+## Echo Service
+The `echo-service` directory has only two files. At this time you are very familiarized with network communication primitives and it is required to fill the code gaps in order to create a functional echo server and echo client programs.

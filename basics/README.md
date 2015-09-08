@@ -23,6 +23,19 @@ Server: ``UDPServer.py``
 To run these programs open two terminals. In one terminal run ``python UDPServer.py``.
 Go to the other terminal and run ``python UDPClient.py`` then follow the instructions.
 
+### What should learn from here - UDPClient.py
+- How to create a socket used to send datagrams
+- How read data coming from server
+- How to read data from terminal
+
+Resuelva el siguiente [formulario](http://goo.gl/forms/0Pf72fveHq).
+
+### What should learn from here - UDPServer.py
+- What is the meaning of `bind` function.
+- What is the method used to send data
+
+Resuelva el siguiente [formulario](http://goo.gl/forms/DOHllYi7FB).
+
 ## A simple TCP client-server program
 
 Client: ``TCPClient.py``
@@ -31,6 +44,21 @@ Server: ``TCPServer.py``
 
 To run these programs open two terminals. In one terminal run ``python TCPServer.py``.
 Go to the other terminal and run ``python TCPClient.py`` then follow the instructions.
+
+### What should learn from here - TCPClient.py
+- How to create a TCP-based socket
+- What parameters recive the `connect()` method
+- How to read data from a TCP socket
+- How to write data through a TCP socket
+
+Resuelva el siguiente [formulario](http://goo.gl/forms/lN4V38wp8f).
+
+### What should learn from here - TCPServer.py
+- How to create a TCP-based socket
+- What the listen() parameter means
+- How to get the identify of a client
+
+Resuelva el siguiente [formulario](http://goo.gl/forms/6RLs4Vqpkh).
 
 ## Questions about UDP\* and TCP\* programs?
 

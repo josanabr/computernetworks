@@ -1,5 +1,15 @@
 #!/usr/bin/python
 # -*- coding: latin-1 -*-
+#
+# Este es el programa cliente de un servicio de echo. Un servicio de echo (eco)
+# como su nombre lo sugiere quiere decir que lo que recibe el servidor lo 
+# regresa tal cual al cliente. Si el cliente envia un 'hola mundo' el servidor
+# le regresara un 'hola mundo'.
+#
+# En este programa el cliente digitara una cadena se la enviara al servidor
+# y este enviara la cadena de vuelta en pedazos de 16 bytes.
+#
+# Complete el programa en aquellas lineas que dice # tu codigo aqui
 # 
 
 import socket 
@@ -10,24 +20,23 @@ host = 'localhost'
 
 def echo_client(port): 
 	# Cree un socket IPv4 y de tipo TCP
-	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	# tu codigo aqui
 	server_address = (host, port)
 	print "Connecting to %s port %s"%server_address
 	# Conectese con el servidor
-	s.connect(server_address)
+	# tu codigo aqui
 	try:
-		# El usuario digite la frase a enviar al servidor y lo guarda
+		# El usuario digita la frase a enviar al servidor y lo guarda
 		# en una variable llamada message
-		message = "Mensaje de prueba. Este sera enviado"
+		# tu codigo aqui
 		print "Sending %s"%message
 		# Envie datos
-		s.sendall(message)
-		# Esperando por respuesta
+		# tu codigo aqui
 		amount_received = 0
 		amount_expected = len(message)
 		while amount_received < amount_expected:
 			# Reciba datos, no mas de 16 bytes
-			data = s.recv(16)
+			# tu codigo aqui
 			amount_received += len(data)
 			print "Received: %s"%data
 	except socket.errno, e:

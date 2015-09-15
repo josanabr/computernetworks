@@ -55,8 +55,8 @@ Resuelva el siguiente [formulario](http://goo.gl/forms/lN4V38wp8f).
 
 ### What should learn from here - TCPServer.py
 - How to create a TCP-based socket
-- What the listen() parameter means
-- How to get the identify of a client
+- What the listen()'s parameter means
+- How to get the identity of a client
 
 Resuelva el siguiente [formulario](http://goo.gl/forms/6RLs4Vqpkh).
 
@@ -77,7 +77,7 @@ Resuelva el siguiente [formulario](http://goo.gl/forms/6RLs4Vqpkh).
 The following programs are located at *socket-utils* directory. There you can find some programas to show how to use the `socket` class in different scenarios. The following files are available:
 
 - **basics-01.py** This program shows the basic use of the `socket` class in particular how to get the hostname of a server where this code is run
-- **basics-02.py** This program shows how to get the IP of a server given its IP
+- **basics-02.py** This program shows how to get the IP of a server given its name
 - **basics-03.py** This program shows how to get the name of a network service given its protocol name and port number
 
 ## NTP Client

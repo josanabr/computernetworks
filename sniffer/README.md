@@ -107,7 +107,9 @@ Pasos que usted debe seguir para monitorear el tráfico `ssh` entre su computado
 
 1. Modificar el campo `filtro` dentro de Wireshark para que se escuche por el puerto del servicio que estamos corriendo para este ejemplo, en este caso `3333`.
 
-2. Desde una terminal ejecutar el siguiente comando `ssh -p 3333 localhost`.
+2. Desde una terminal ejecutar el siguiente comando `ssh -p 3333 root@localhost`. 
+Cuando se pida el `password` digitar `screencast`.
+
 
 ¿Cómo se da cuenta que efectivamente los datos que se envían por `ssh` no se pueden entender?
 

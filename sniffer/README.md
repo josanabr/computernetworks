@@ -39,7 +39,8 @@ Para ello usted debe descargar los archivos que están en la carpeta [telnet](ht
 Descargue los archivos `Dockerfile` y `telnet` a una carpeta nueva. 
 Estando en dicha carpeta ejecute lo siguiente
 
-````bash
+```bash
 docker build -t jstelnet .
 ```
 
+xx

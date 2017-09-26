@@ -33,14 +33,36 @@ Una primera práctica que debe llevar a cabo el estudiante es validar que se pue
 
 --- 
 
-Una segunda práctica que se propone es la que tiene que ver con el servicio de red. 
-Para ello usted debe descargar los archivos que están en la carpeta [telnet](https://github.com/josanabr/computernetworks/tree/master/sniffer/telnet).
+Una segunda práctica que se propone es la que tiene que ver con el servicio de red `telnet`. 
+Para ello lleve a cabo los siguientes pasos: 
 
-Descargue los archivos `Dockerfile` y `telnet` a una carpeta nueva. 
-Estando en dicha carpeta ejecute lo siguiente
+1. Descargar los archivos `Dockerfile` y `telnet` que están en la carpeta [telnet](https://github.com/josanabr/computernetworks/tree/master/sniffer/telnet) a una carpeta nueva.
+
+2. Estando en dicha carpeta ejecute lo siguiente
 
 ```bash
 docker build -t jstelnet .
 ```
 
-xx
+3. Una vez termine la ejecución del comando anterior, ejecute el siguiente comando
+
+```bash
+docker run --rm -it -p 2323:23 jstelnet
+```
+
+4. Vaya al programa `Wireshark` y cambie en el campo filtro `tcp.port == 80` por el identificador de puerto del servicio `telnet`.
+
+Evidencie lo débil que es el servicio `telnet` y la razón por la cual hoy no es tan popular.
+
+**Sin embargo** el comando `telnet` nos permite validar la disponibilidad de servicios como el de un servidor web.
+
+Entendiendo que usted tiene corriendo el servidor `nginx` ejecute los siguientes comandos
+
+```bash
+telnet localhost 8080
+GET /index.html HTTP/1.1
+host: localhost
+
+```
+
+**Recuerde** que para indicar la terminación de una petición HTTP es necesario ejecutar **dos veces** la tecla **ENTER** después de digitar `host: localhost`.

@@ -23,6 +23,9 @@ docker pull nginx
 En este [video](https://youtu.be/3ucnHOPQmFk) usted podrá encontrar más detalles relacionados a la forma como se accede a estos contenedores.
 
 ---
+# Prácticas
+
+## Práctica web
 
 Una primera práctica que debe llevar a cabo el estudiante es validar que se pueden observar los paquetes que se transfieren entre un servidor web y un cliente web (a.k.a. *web browser*). 
 1. Se debe ejecutar el contenedor que tiene Wireshark.
@@ -33,6 +36,8 @@ Una primera práctica que debe llevar a cabo el estudiante es validar que se pue
 6. Analizar los paquetes que se ven en la interacción.
 
 --- 
+
+## Práctica Telnet
 
 Una segunda práctica que se propone es la que tiene que ver con el servicio de red [telnet](https://en.wikipedia.org/wiki/Telnet). 
 Para ello lleve a cabo los siguientes pasos: 
@@ -57,6 +62,8 @@ Evidencie lo débil que es el servicio `telnet` y la razón por la cual hoy no e
 Para ello, limpie todos los paquetes analizados hasta el momento por el Wireshark y desde una terminal ejecute el comando `telnet localhost 2323`. 
 Cuando se le pregunte por el **login** digite `usuario` y por el password digite `usuario`.
 
+Observe que el servicio `telnet` envía un dato o caracter a la vez.
+
 ---
 
 **Sin embargo** el comando `telnet` nos permite validar la disponibilidad de servicios como el de un servidor web.
@@ -76,6 +83,46 @@ El comando `telnet` nos permite acceder a servicios de red sin necesidad de util
 
 ---
 
+## Práctica SSH
+
 De forma similar usted ahora debe evidenciar porque un servicio como el `ssh` es mas seguro que el `telnet`.
 
-Para ello descargue
+Para ello vamos a crear un contenedor con el servicio de SSH. 
+Para ello ejecute los siguientes pasos: 
+
+1. Descargue el archivo `Dockerfile` que esta en esta en [dirección](https://github.com/josanabr/computernetworks/tree/master/sniffer/ssh) en una carpeta nueva. 
+2. Ejecute el siguiente comando estando en la carpeta donde descargó el archivo `Dockerfile`
+
+```bash
+docker build -t jsssh .
+```
+
+3. Una vez termine la ejecución del comando, ejecute el contenedor de la siguiente manera
+
+```bash
+docker run --rm -d -p 3333:22 jsssh
+```
+
+Pasos que usted debe seguir para monitorear el tráfico `ssh` entre su computador y el contenedor:
+
+1. Modificar el campo `filtro` dentro de Wireshark para que se escuche por el puerto del servicio que estamos corriendo para este ejemplo, en este caso `3333`.
+
+2. Desde una terminal ejecutar el siguiente comando `ssh -p 3333 localhost`.
+
+¿Cómo se da cuenta que efectivamente los datos que se envían por `ssh` no se pueden entender?
+
+---
+
+# Tarea servicio de red FTP
+
+Usted deberá describir una práctica de acceso al servicio de red FTP similar a la forma como se hizo en esta guía para los servicios web, telnet y ssh (en archivo de Google Drive la descripción). 
+
+Usted deberá además presentar un video no mayor a 5 minutos donde se evidencie como el protocolo de red FTP tampoco es seguro.
+
+Ideas de como llevar a cabo esta práctica
+
+1. Descargar un contenedor con el servicio de red FTP.
+2. Ejecutar dicho contenedor.
+3. Probar que desde una terminal usted puede acceder al servicio de FTP, [enlace 1](https://kb.globalscape.com/KnowledgebaseArticle10224.aspx) [enlace 2](http://www.tburke.net/info/misc/cmdline-ftp.htm).
+4. Analizar el tráfico de red usando Wireshark. 
+Algo clave es que FTP usa dos puertos a la hora de interactuar con un cliente, un puerto de comandos y otro puerto para transferir datos. Esto lo debes tener en cuenta para poder tener éxito en la tarea.

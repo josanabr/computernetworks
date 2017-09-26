@@ -1,13 +1,7 @@
-# Computer Networks - Programming in Python
-This repository presents a set of examples where you can learn how to do basic networking programs in Python.
+# Redes de computadores 
 
-Python has been choosen as the language to learn about the network basics because
+En este repositorio se presenta información pertinente para llevar a cabo prácticas dentro del curso de Fundamento de Redes. 
 
-- It is a language available in almost every Linux system.
-- Python's syntax is very easy to follow and understand. 
-Then, if you know about Algorithms and know a little English then Python will look natural to you.
+En una primera parte se presenta una serie de prácticas para usar el analizador de paquetes de red [Wireshark](https://github.com/josanabr/computernetworks/tree/master/sniffer).
 
-## September 30
-
-The directory ``basics`` contains a set of Python programs showing snippets of
-code  where basic concepts of network programming are presented.
+Se tiene además una [serie de ejemplos](https://github.com/josanabr/computernetworks/tree/master/basics) en el lenguaje de programación en Python que muestra la forma como se construyen aplicaciones de red a un bajo nivel.

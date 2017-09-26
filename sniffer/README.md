@@ -73,3 +73,9 @@ host: localhost
 **Recuerde** que para indicar la terminación de una petición HTTP es necesario ejecutar **dos veces** la tecla **ENTER** después de digitar `host: localhost`.
 
 El comando `telnet` nos permite acceder a servicios de red sin necesidad de utilizar las herramientas naturales que se usan para acceder a dichos servicios. 
+
+---
+
+De forma similar usted ahora debe evidenciar porque un servicio como el `ssh` es mas seguro que el `telnet`.
+
+Para ello descargue

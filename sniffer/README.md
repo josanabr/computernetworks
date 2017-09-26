@@ -34,4 +34,12 @@ Una primera práctica que debe llevar a cabo el estudiante es validar que se pue
 --- 
 
 Una segunda práctica que se propone es la que tiene que ver con el servicio de red. 
-Para ello usted debe descargar los archivos que están en la carpeta 
+Para ello usted debe descargar los archivos que están en la carpeta [telnet](https://github.com/josanabr/computernetworks/tree/master/sniffer/telnet).
+
+Descargue los archivos `Dockerfile` y `telnet` a una carpeta nueva. 
+Estando en dicha carpeta ejecute lo siguiente
+
+````bash
+docker build -t jstelnet .
+```
+

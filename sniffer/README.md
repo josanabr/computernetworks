@@ -20,3 +20,18 @@ docker pull manell/wireshark
 docker pull nginx
 ```
 
+En este [video](https://youtu.be/3ucnHOPQmFk) usted podrá encontrar más detalles relacionados a la forma como se usan estos contenedores.
+
+---
+
+Una primera práctica que debe llevar a cabo el estudiante es validar que se pueden observar los paquetes que se transfieren entre un servidor web y un cliente web (a.k.a. web browser). 
+1. Se debe ejecutar el contenedor que tiene Wireshark.
+2. Se ejecuta el contenedor que tiene el servidor web.
+3. Dentro de las opciones de tarjetas de red disponibles para monitorear se selecciona la etiqueta `any`.
+4. En el campo de texto que tiene la palabra `filtro` o `filter` colocar la expresión `tcp.port == 80`.
+5. Analizar los paquetes que se ven en la interacción.
+
+--- 
+
+Una segunda práctica que se propone es la que tiene que ver con el servicio de red. 
+Para ello usted debe descargar los archivos que están en la carpeta 

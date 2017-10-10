@@ -1,13 +1,12 @@
 #/usr/bin/python
-# Complete el codigo, busque "TU CODIGO AQUI"
+# Complete el codigo, en la sección que dice COMPLETE de acuerdo al enunciado
+# dado en este enlace https://goo.gl/1uQqiB, item 'socket-http-client'
+#
 import socket
 import sys
 
-# Se esta creando un socket que es del tipo IPv4 (socket.AF_INET) y es orientado
-# a conexion (socket.SOCK_STREAM a.k.a. TCP)
-#
 try: # esta estructura permite capturar comportamientos anomalos
-	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+     # COMPLETE (1) 
 except socket.error, msg: # si es del tipo socket.error
 	print "Failed to create socket. Error code: " + str(msg[0]) + ", error message: " + msg[1] 
 	sys.exit()
@@ -15,23 +14,21 @@ except socket.error, msg: # si es del tipo socket.error
 print "Socket created"
 
 host = "www.google.com"
-# TU CODIGO AQUI
 # defina una variable port y almacene alli el numero 80
+# COMPLETE (2) 
+
 
 try:
-	# TU CODIGO AQUI
-	# Encuentre el IP dado el nombre de servidor en la variable 'host'
-	# y almacenelo en una variable llamada 'remote_ip'
+	# COMPLETE (3)
 except socket.gaierror:
 	print "Hostname could not be resolved. Exiting"
 	sys.exit()
 
-# TU CODIGO AQUI
-# Imprima por pantalla un mensaje que diga
-# La direccion IP de www.google.com es 216.58.192.100
-# el numero IP puede variar y debe ser leido de la variable remote_ip
+# COMPLETE (4)
 
-s.connect((remote_ip, port))
+# COMPLETE (5)
+
+# COMPLETE (6)
 
 print "Socket connected to " + host + " on ip " + remote_ip
 
@@ -39,7 +36,7 @@ print "Socket connected to " + host + " on ip " + remote_ip
 message = "GET / HTTP/1.1\r\n\r\n"
 
 try:
-	s.sendall(message)
+	# COMPLETE (7)
 except socket.error:
 	print "Send failed"
 	sys.exit()
@@ -47,6 +44,6 @@ except socket.error:
 print "Message send successfullly"
 
 # Recibiendo datos
-reply = s.recv(4096)
+# COMPLETE (8)
 print reply
 s.close()

@@ -13,7 +13,7 @@ Usted debe completar dicho cliente de la siguiente manera.
 Revise el código y en cada comentario que encuentre la palabra `COMPLETE (n)` debe introducir el código en Python que le indica el numeral `(n)`. 
 A continuación las pistas de lo que debe poner en el código:
 
- 1. Defina una variable llamada `s` que es de tipo socket y utiliza el protocolo TCP para la comunicación.
+ 1. Instancie una variable llamada `s` que es de tipo socket y utiliza el protocolo TCP para la comunicación.
  2. Defina una variable llamada `port` y almacene en ella el valor entero `80`.
  3. Encuentre el IP del servidor que se encuentra en la variable `host` y guárdelo en una variable llamada `remote_ip`.
  4. Imprima un mensaje por pantalla que diga el siguiente mensaje `La dirección IP de www.google.com es 216.58.192.100`. El número IP `216.58.192.100` y `www.google.com` se deben tomar de las variables `remote_ip` y `host`, respectivamente.

@@ -21,3 +21,10 @@ A continuación las pistas de lo que debe poner en el código:
  6. Utilice la variable `s` y su método `connect` con argumento la variable `endpoint` para llevar a cabo el proceso de conexión.
  7. Utilice un método de la variable `s` para enviar los datos al servidor.
  8. Utilice un método de la variable `s` para recibir los datos de respuesta del servidor y los almacena en una nueva variable llamada `reply`. 
+
+* [another-simple-http-server](another-simple-http-server), similar al ejemplo del punto anterior, usted debe completar el código de acuerdo a lo descrito en los siguientes numerales:
+
+ 1. Instancie una variable llamada `ss` que es de tipo socket y utiliza el protocolo TCP para la comunicación.
+ 2. Defina una tupla llamada `endpoint` y que consta de los valores en las variables `''` y `args.port`.
+ 3. Utilice los métodos necesarios para asociar el socket a la tupla definia anteriormente e indíquele al sistema operativo el máximo número de conexiones que este debe atender en caso que el servidor web no lo pueda hacer inmediatamente. **HINT** Los métodos son `bind` y `listen`.
+ 4. Siga las instrucciones que se indican en el código fuente

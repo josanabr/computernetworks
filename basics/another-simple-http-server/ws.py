@@ -28,7 +28,8 @@ def main():
     # Create the server socket (to handle tcp requests using ipv4), make sure
     # it is always closed by using with statement.
     #with Socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
-    ss = Socket(socket.AF_INET, socket.SOCK_STREAM) 
+
+    # COMPLETE (1)
 
     # The socket stays connected even after this script ends. So in order
     # to allow the immediate reuse of the socket (so that we can kill and
@@ -37,8 +38,8 @@ def main():
     # data arriving at the socket.
     ss.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-    ss.bind(('', args.port))
-    ss.listen(1)
+    # COMPLETE (2)
+    # COMPLETE (3)
 
     print("server ready")
 
@@ -79,9 +80,7 @@ def http_handle(request_string):
     # to write additional functions to parse the http request into a nicer data
     # structure (eg a dict), and to easily create http responses.
 
-    raise NotImplementedError
-
-    pass
+    # COMPLETE (4)
     # esta funcion DEBE RETORNAR UNA CADENA que contenga el recurso (archivo)
     # que se consulta desde un navegador e.g. http://localhost:2080/index.html
     # En el ejemplo anterior se esta solicitando por el archivo 'index.html'

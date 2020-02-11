@@ -7,7 +7,8 @@ import socket
 import sys
 import argparse
 
-host = 'localhost'
+# Indicates to liste through all network interfaces in the server
+host = '0.0.0.0'
 data_payload = 2048
 backlog = 5 
 

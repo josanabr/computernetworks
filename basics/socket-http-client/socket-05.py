@@ -34,7 +34,7 @@ except socket.gaierror:
 print "Socket connected to " + host + " on ip " + remote_ip
 
 # Datos a enviarse
-message = "GET / HTTP/1.1\r\n\r\n"
+message = "GET / HTTP/1.1\r\nHost: " + host + "\r\n\r\n"
 
 try:
 	# COMPLETE (7)

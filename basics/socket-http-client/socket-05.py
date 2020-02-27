@@ -1,6 +1,7 @@
-#/usr/bin/python
-# Complete el codigo, en la sección que dice COMPLETE de acuerdo al enunciado
+#!/usr/bin/python
+# Complete el codigo, en la seccion que dice COMPLETE de acuerdo al enunciado
 # dado en este enlace https://goo.gl/1uQqiB, item 'socket-http-client'
+# https://goo.gl/1uQqiB -> https://github.com/josanabr/computernetworks/tree/master/basics
 #
 import socket
 import sys
